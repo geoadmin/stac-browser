@@ -18,8 +18,9 @@ then merge our master branch into `geoadmin_master`. This way conflict are resol
 
 ![stac-browser-git-branch](./stac-browser-git-branch.svg)
 
-NOTE: the `external-pagination` branch is the current one deployed and is meant to be deleted when the pagination
-is fully implemented by radiantearth repository.
+NOTE: the `external-pagination` branch was an experiment to try to implement pagination on v2. However this implementation did not worked correctly and we went for the alpha v3, see below.
+
+NOTE: Currently we have deployed the `v3` branch of `radiantearth/stac-browser` that is still in alpha state. We use the same branch schema as above simply replacing `master` by `v3`, respectively `origin/v3` which should be equal to `upstream/v3` and `origin/geoadmin_v3` which is based on `origin/v3` and contained our changes.
 
 ## Deploy
 
