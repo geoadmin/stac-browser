@@ -5,6 +5,7 @@ specific scripts and feature to deploy the STAC browser on [data.geo.admin.ch/br
 
 - [GIT Branch Strategy](#git-branch-strategy)
   - [Update procedure from upstream](#update-procedure-from-upstream)
+- [New Release](#new-release)
 - [Deploy](#deploy)
 
 ## GIT Branch Strategy
@@ -46,6 +47,24 @@ origin and upstream should always be identical)
     git checkout geoadmin_master
     git merge master
     git push origin geoadmin_master
+    ```
+
+## New Release
+
+At best we only deploy state that are tagged and to simplify and keep a fixed tagging nomenclature
+a small script has been added. The release procedure is as follow.
+
+1. Checkout the state that you want to release/deploy
+2. Then run
+
+    ```bash
+    ./geoadmin/release.sh
+    ```
+
+3. If the script failed with `ERROR: tag geoadmin_vXXXX already exists` then give a custom tag
+
+    ```bash
+    ./geoadmin/release.sh --tag MY_CUSTOM_TAG
     ```
 
 ## Deploy
