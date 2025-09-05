@@ -34,7 +34,7 @@ module.exports = {
     crossOriginMedia: null,
     requestHeaders: {},
     requestQueryParameters: {},
-    socialSharing: ['email', 'bsky', 'mastodon', 'x'],
+    socialSharing: ['email', 'bsky', 'mastodon'],
     preprocessSTAC: stac => {
         if (stac.getBrowserPath() == '/') {
           stac.conformsTo.push('https://api.stacspec.org/v1.0.0/item-search');
