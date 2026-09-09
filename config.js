@@ -8,10 +8,22 @@ module.exports = {
     locale: "en",
     fallbackLocale: "en",
     supportedLocales: [
-        "de-CH",
+        "de",
+        "ar",
+//      "de-CH",
+        "es",
         "en",
-        "fr-CH",
-        "it-CH",
+//      "en-GB",
+//      "en-US",
+        "fr",
+//      "fr-CA",
+//      "fr-CH",
+        "it",
+//      "it-CH",
+        "ro",
+        "ja",
+        "pt",
+//      "pt-BR"
     ],
     apiCatalogPriority: null,
     useTileLayerAsFallback: true,
@@ -34,18 +46,7 @@ module.exports = {
     crossOriginMedia: null,
     requestHeaders: {},
     requestQueryParameters: {},
-    socialSharing: ['email', 'bsky', 'mastodon'],
-    preprocessSTAC: stac => {
-        if (stac.getBrowserPath() == '/') {
-          stac.conformsTo.push('https://api.stacspec.org/v1.0.0/item-search');
-          stac.links = stac.links.map(link => {
-            if (link.rel === 'search') {
-              link.type = 'application/geo+json';
-            }
-            return link;
-          });
-        }
-        return stac;
-      },
+    socialSharing: ['email', 'bsky', 'mastodon', 'x'],
+    preprocessSTAC: null,
     authConfig: null
 };

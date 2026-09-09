@@ -89,7 +89,7 @@ echo "${YELLOW}NPM install...${RESET}"
 npm install
 
 echo "${YELLOW}Building with catalog ${CATALOG_URL}...${RESET}"
-npm run build -- --historyMode=hash --cardViewSort=desc --catalogUrl="${CATALOG_URL}" --catalogTitle="data.geo.admin.ch" --pathPrefix="/browser/" ./
+SB_CONFIG=geoadmin/config.js SB_catalogUrl="${CATALOG_URL}" npm run build .
 
 echo "${YELLOW}Uploading to ${S3_BUCKET_NAME}...${RESET}"
 aws --profile ${AWS_PROFILE} \
