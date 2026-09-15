@@ -3,7 +3,8 @@ export default {
   catalogTitle: 'data.geo.admin.ch',
   pathPrefix: '/browser/',
   historyMode: 'hash',
-  cardViewSort: 'desc',
+  defaultCollectionSort: '-title',
+  defaultItemSort: '-properties.title',
   socialSharing: ['email', 'bsky', 'mastodon'],  // no X
   preprocessSTAC: stac => {
       if (stac.getBrowserPath() == '/') {
