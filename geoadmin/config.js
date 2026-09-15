@@ -6,8 +6,8 @@ export default {
   defaultCollectionSort: '-title',
   defaultItemSort: '-properties.title',
   socialSharing: ['email', 'bsky', 'mastodon'],  // no X
-  preprocessSTAC: stac => {
-      if (stac.getBrowserPath() == '/') {
+  preprocessSTAC: (stac, state, getters) => {
+      if (getters.toBrowserPath(stac.getAbsoluteUrl()) === '/') {
         stac.conformsTo.push('https://api.stacspec.org/v1.0.0/item-search');
         stac.links = stac.links.map(link => {
           if (link.rel === 'search') {
