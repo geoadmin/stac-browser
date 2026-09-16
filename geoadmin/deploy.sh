@@ -58,9 +58,9 @@ fi
 
 
 # Setting catalog URL
-CATALOG_URL=https://data.geo.admin.ch/api/stac/v0.9/
+CATALOG_URL=https://data.geo.admin.ch/api/stac/v1/
 if [[ "${STAGING:-}" == "dev" ]] || [[ "${STAGING:-}" == "int" ]]; then
-    CATALOG_URL=https://sys-data.${STAGING}.bgdi.ch/api/stac/v0.9/
+    CATALOG_URL=https://sys-data.${STAGING}.bgdi.ch/api/stac/v1/
 fi
 
 # Setting default cache control max-age
