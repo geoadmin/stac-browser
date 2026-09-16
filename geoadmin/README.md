@@ -18,7 +18,7 @@ As much as possible, changes should be contained within the `geoadmin/`
 directory as to reduce the risk of conflicts when merging new upstream versions.
 
 To get the lastest changes from the radiantearth, we first merge radiantearth main branch into our main branch and
-then merge our mainb branch into `geoadmin_master`. This way conflict are resolved locally between two branch of the same repo. *NOTE: we should first thoughtfully test any upstream changes !*
+then merge our main branch into `geoadmin_master`. This way conflict are resolved locally between two branch of the same repo. *NOTE: we should first thoughtfully test any upstream changes !*
 
 ![stac-browser-git-branch](./stac-browser-git-branch.svg)
 
