@@ -8,17 +8,12 @@
 </template>
 
 <script>
-import STAC from '../models/stac.js';
+import { STAC } from 'stac-js';
 import validateSTAC from 'stac-node-validator';
-import { BIconCheck, BIconX } from 'bootstrap-vue';
 import { mapGetters } from 'vuex';
 
 export default {
   name: "Validation",
-  components: {
-    BIconCheck,
-    BIconX
-  },
   props: {
     data: {
       type: Object,
@@ -39,7 +34,7 @@ export default {
     ...mapGetters(['toBrowserPath']),
     validationLink() {
       if (this.data instanceof STAC) {
-        return '/validation' + this.toBrowserPath(this.data.getAbsoluteUrl());
+        return '/validation' + this.toBrowserPath(this.data);
       }
       else {
         return null;
@@ -55,7 +50,11 @@ export default {
       this.valid = null;
       try {
         if (this.data instanceof STAC) {
-          const report = await validateSTAC(this.data);
+          const stac = this.data._original || this.data.toJSON();
+          const report = await validateSTAC(stac, {});
+          if (report.valid === null) {
+            console.warn(report.messages);
+          }
           this.valid = report.valid;
         }
       } catch (error) {
@@ -68,6 +67,4 @@ export default {
 };
 </script>
 
-<style>
 
-</style>
