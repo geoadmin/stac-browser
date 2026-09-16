@@ -64,10 +64,10 @@ if [[ "${STAGING:-}" == "dev" ]] || [[ "${STAGING:-}" == "int" ]]; then
 fi
 
 # Setting default cache control max-age
-MAX_AGE=${MAX_AGE:-3600}
 if [[ "${STAGING:-}" == "dev" ]]; then
     MAX_AGE=${MAX_AGE:-120}
 fi
+MAX_AGE=${MAX_AGE:-3600}
 
 # Setting s3 URL
 if [[ "${STAGING:-}" == "dev" ]]; then
