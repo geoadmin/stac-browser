@@ -1,3 +1,4 @@
+// dummy
 export default {
   catalogUrl: 'https://data.geo.admin.ch/api/stac/v1/',
   catalogTitle: 'data.geo.admin.ch',
