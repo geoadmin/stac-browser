@@ -4,7 +4,7 @@ export default {
   pathPrefix: '/browser/',
   historyMode: 'hash',
   defaultCollectionSort: '-title',
-  defaultItemSort: '-properties.title',
+  defaultItemSort: '-properties.created',
   socialSharing: ['email', 'bsky', 'mastodon'],  // no X
   supportedLocales: [
     "de-CH",

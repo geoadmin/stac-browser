@@ -32,7 +32,7 @@ This section explains how to import the latest upstream release.
 
 3. Verify your git clone has the upstream remote. For example:
 ```
-git remove -v
+$ git remote -v
 origin  git@github.com:geoadmin/stac-browser.git (fetch)
 origin  git@github.com:geoadmin/stac-browser.git (push)
 upstream        git@github.com:radiantearth/stac-browser.git (fetch)
@@ -52,7 +52,7 @@ git branch new-upstream-release geoadmin_master
 6. Merge the desired version/tag into your new branch. For example:
 ```
 git checkout new-upstream-release
-git merge v5.0.1
+git merge v5.1.0
 ```
 No conflict should arise. If it does, you need to figure out how to resolve it
 before proceeding.
